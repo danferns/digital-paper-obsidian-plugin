@@ -1,11 +1,13 @@
 {
-	"id": "sample-plugin",
-	"name": "Sample Plugin",
+	"id": "digital-paper",
+	"name": "digital paper",
 	"version": "1.0.0",
 	"minAppVersion": "0.15.0",
-	"description": "This is a sample plugin for Obsidian. This plugin demonstrates some of the capabilities of the Obsidian API.",
-	"author": "Obsidian",
-	"authorUrl": "https://obsidian.md",
-	"fundingUrl": "https://obsidian.md/pricing",
+	"description": "turn off backspace and undo, just like writing with a pen on real paper.",
+	"author": "Daniel Fernandes",
+	"authorUrl": "https://github.com/danferns",
+	"fundingUrl": {
+		"Buy my music": "https://twinklingkites.bandcamp.com/"
+	},
 	"isDesktopOnly": false
 }
