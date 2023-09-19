@@ -63,6 +63,7 @@ export default class DigitalPaper extends Plugin {
 			callback: () => {
 				this.settings.enabled = !this.settings.enabled;
 				this.displayModeOnStatusBar();
+				this.saveSettings();
 			},
 		});
 	}
