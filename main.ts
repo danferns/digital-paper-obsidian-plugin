@@ -5,8 +5,6 @@ import {
 	WorkspaceLeaf,
 } from "obsidian";
 
-// Remember to rename these classes and interfaces!
-
 interface DigitalPaperSettings {
 	enabled: boolean;
 }
@@ -58,7 +56,7 @@ export default class DigitalPaper extends Plugin {
 
 		// This adds a simple command that can be triggered anywhere
 		this.addCommand({
-			id: "digital-paper-toggle",
+			id: "toggle",
 			name: "Toggle digital paper mode",
 			callback: () => {
 				this.settings.enabled = !this.settings.enabled;
