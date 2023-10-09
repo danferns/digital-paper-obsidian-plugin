@@ -18,6 +18,10 @@ Enable / Disable the "paper mode" by opening the command palette (Ctrl+P) and ty
 
 When enabled, Obsidian's status bar will display the text "paper". 
 
+## Feedback
+
+You can DM me `@thepianodan` on Discord, or ping me on the official Obsidian Discord server for feedback, bug reports, and feature requests. If you don't use Discord, you can also email me at `dannywritescode@gmail.com`. 
+
 ## Say thanks
 
 If this plugin adds value to your life and you'd like to support me, feel welcomed to buy my music on [Bandcamp](https://twinklingkites.bandcamp.com/). It would mean a lot to me!
