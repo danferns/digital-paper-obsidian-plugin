@@ -1,8 +1,4 @@
-# Digital Paper Obsidian Plugin (Beta)
-
-> IMPORTANT: This plugin is currently in its early stages, and any bugs may lead to data loss. Please ensure that you are taking regular backups of your vault and use this plugin only at your own risk. 
-
----
+# Digital Paper Obsidian Plugin
 
 Ever find yourself deleting whatever you write as soon as you type it out? I certainly do.
 
