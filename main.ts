@@ -33,6 +33,9 @@ export default class DigitalPaper extends Plugin {
 					) {
 						// user changed existing text, revert to old value
 						editor.setValue(oldValue);
+						// keep the cursor at the end (prevents cursor jumping around)
+						const endOfText = editor.offsetToPos(oldValue.length);
+						editor.setCursor(endOfText);
 					}
 					oldValue = editor.getValue();
 				}
