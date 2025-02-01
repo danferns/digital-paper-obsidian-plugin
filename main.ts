@@ -13,7 +13,22 @@ const DEFAULT_SETTINGS: DigitalPaperSettings = {
 	enabled: true,
 };
 
+// workaround for Obsidian's auto-pair feature
+const AUTO_PAIRS = [`""`, `''`, "``", "`\n```", "()", "{}", "[]", "**", "__"];
+
 let oldValue: string | undefined = undefined;
+
+function handleTextChanges(oldValue: string, newValue: string, editor: Editor) {
+	if (newValue.startsWith(oldValue)) {
+		// if '()' was inserted, replace with just '(', and so on...
+		if (AUTO_PAIRS.includes(newValue.substring(oldValue.length))) {
+			editor.setValue(newValue.substring(0, oldValue.length + 1));
+		}
+	} else {
+		// some of the existing text was changed
+		editor.setValue(oldValue);
+	}
+}
 
 export default class DigitalPaper extends Plugin {
 	settings: DigitalPaperSettings;
@@ -26,20 +41,30 @@ export default class DigitalPaper extends Plugin {
 			this.app.workspace.on(
 				"editor-change",
 				(editor: Editor, view: MarkdownView) => {
-					if (
-						this.settings.enabled &&
-						oldValue !== undefined &&
-						!editor.getValue().startsWith(oldValue)
-					) {
-						// user changed existing text, revert to old value
-						editor.setValue(oldValue);
+					console.log(editor.getValue());
+					if (this.settings.enabled && oldValue !== undefined) {
+						handleTextChanges(oldValue, editor.getValue(), editor);
+
 						// keep the cursor at the end (prevents cursor jumping around)
-						const endOfText = editor.offsetToPos(oldValue.length);
+						const endOfText = editor.offsetToPos(
+							editor.getValue().length
+						);
 						editor.setCursor(endOfText);
 					}
+
 					oldValue = editor.getValue();
 				}
 			)
+		);
+
+		this.registerEvent(
+			this.app.workspace.on("editor-paste", (evt: ClipboardEvent) => {
+				// disable pasting as we cannot differentiate it from auto-pair behaviour
+				if (this.settings.enabled) {
+					evt.preventDefault();
+					evt.stopPropagation();
+				}
+			})
 		);
 
 		this.registerEvent(
