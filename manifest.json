@@ -1,7 +1,7 @@
 {
 	"id": "digital-paper",
 	"name": "digital paper",
-	"version": "1.0.2",
+	"version": "1.0.3",
 	"minAppVersion": "0.15.0",
 	"description": "turn off backspace and undo, just like writing with a pen on real paper.",
 	"author": "Daniel Fernandes",
