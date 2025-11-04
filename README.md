@@ -14,6 +14,18 @@ Enable / Disable the "paper mode" by opening the command palette (Ctrl+P) and ty
 
 When enabled, Obsidian's status bar will display the text "paper". 
 
+## See also
+
+These are plugins in the Obsidian ecosystem which pair well with digital paper.
+
+### [Freewriting Cleanup](https://github.com/AlexKucera/freewriting-cleanup)
+
+Quickly fix typos, grammar, etc. in your freewriting using AI.
+
+### [Freewriting Prompts](https://github.com/AlexKucera/freewriting-prompts)
+
+Generate freewriting prompts using AI.
+
 ## Feedback
 
 You can DM me `@thepianodan` on Discord, or ping me on the official Obsidian Discord server for feedback, bug reports, and feature requests. If you don't use Discord, you can also email me at `dannywritescode@gmail.com`. 
