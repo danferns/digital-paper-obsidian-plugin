@@ -41,7 +41,6 @@ export default class DigitalPaper extends Plugin {
 			this.app.workspace.on(
 				"editor-change",
 				(editor: Editor, view: MarkdownView) => {
-					console.log(editor.getValue());
 					if (this.settings.enabled && oldValue !== undefined) {
 						handleTextChanges(oldValue, editor.getValue(), editor);
 
